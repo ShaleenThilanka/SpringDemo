@@ -6,7 +6,7 @@ name: Java CI with Maven
 on:
   push:
     branches: [ master ]
-  
+
 
 jobs:
   build:
@@ -23,3 +23,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Excute Jar File
+        run: sudo kill -9 `sudo lsof -t -:8001` & sudo java -jar /home/ubuntu/actions-runner/_work/SpringDemo/SpringDemo/target/spring-boot-0.0.1-SNAPSHOT.jar &
