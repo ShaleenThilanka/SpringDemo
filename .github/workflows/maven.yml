@@ -27,18 +27,18 @@ jobs:
 
     - name: Build & push Docker image
 
-      uses: mr-smithers-excellent/docker-build-push@v5
-      with:
-        image: spring-demo-images
-        registry: 951431455165.dkr.ecr.us-east-2.amazonaws.com
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 #      uses: mr-smithers-excellent/docker-build-push@v5
 #      with:
-#        image: shaliya/spring-demo-images
-#        tags: latest
-#        registry: docker.io
-#        dockerfile: Dockerfile
-#        username: ${{ secrets.DOCKER_USERNAME }}
-#        password: ${{ secrets.DOCKER_PASSWORD }}
+#        image: spring-demo-images
+#        registry: 951431455165.dkr.ecr.us-east-2.amazonaws.com
+#      env:
+#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: shaliya/spring-demo-images
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
