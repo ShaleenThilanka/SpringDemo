@@ -107,6 +107,8 @@
             </plugin>
 
         </plugins>
+
+        <finalName>spring-demo-images</finalName>
     </build>
 
 </project>
