@@ -19,7 +19,7 @@ public class PostDto {
     private String shortDescription;
     private Date publishedDate;
     private PriorityType priorityType;
-    private ArrayList sourceLinks;
+    private String imgUrl;
     private ArrayList description;
     private ConsumerType consumerType;
     private boolean propertyAvailability;

@@ -18,7 +18,7 @@ public class PostRequestDto {
     private String shortDescription;
     private Date publishedDate;
     private String priorityType;
-    private ArrayList sourceLinks;
+    private String imgUrl;
     private ArrayList description;
     private String consumerType;
     private ArrayList otherData;

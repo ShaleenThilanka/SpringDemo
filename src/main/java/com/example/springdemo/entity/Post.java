@@ -44,9 +44,9 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private PriorityType priorityType;
 
-    @Type(type = "json")
-    @Column(name = "source_links", columnDefinition = "json")
-    private ArrayList sourceLinks;
+
+    @Column(name = "img_url", columnDefinition = "TEXT")
+    private String imgUrl;
 
     @Type(type = "json")
     @Column(name = "description", columnDefinition = "json")

@@ -1,6 +1,7 @@
 package com.example.springdemo.controller;
 
 
+import com.example.springdemo.dto.PostDto;
 import com.example.springdemo.dto.paginateddto.PaginatedPostResponseDto;
 import com.example.springdemo.dto.requestdto.PostRequestDto;
 import com.example.springdemo.service.PostService;
@@ -37,8 +38,8 @@ public class PostController {
     @PutMapping(path = "/modify", params = {"propertyId", "title"})
     public ResponseEntity<StandardResponse> updatePost(
             @RequestParam(value = "propertyId") String id,
-            @RequestParam(value = "title") String title) {
-        boolean isUpdated = postService.updatePost(id, title);
+            @RequestBody PostDto dto) {
+        boolean isUpdated = postService.updatePost(id, dto);
 
         LOGGER.info("property Updated!, Id:" + isUpdated);
         return new ResponseEntity<StandardResponse>(

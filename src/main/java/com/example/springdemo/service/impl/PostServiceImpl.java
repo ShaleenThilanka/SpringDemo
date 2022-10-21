@@ -42,7 +42,7 @@ public class PostServiceImpl implements PostService {
                 dto.getShortDescription(),
                 dto.getPublishedDate(),
                 priorityType,
-                dto.getSourceLinks(),
+                dto.getImgUrl(),
                 dto.getDescription(),
                 consumerType,
                 true,
@@ -57,11 +57,11 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public boolean updatePost(String id, String title) {
+    public boolean updatePost(String id, PostDto dto) {
         Optional<Post> postUpdated = postRepo.findById(id);
         if (postUpdated.isPresent()) {
-            postUpdated.get().setTitle(title);
-            postRepo.save(postUpdated.get());
+
+            postRepo.save(postMapper.toPost(dto));
             return true;
         }
         return false;

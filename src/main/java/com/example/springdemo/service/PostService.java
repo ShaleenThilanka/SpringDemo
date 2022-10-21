@@ -1,5 +1,6 @@
 package com.example.springdemo.service;
 
+import com.example.springdemo.dto.PostDto;
 import com.example.springdemo.dto.paginateddto.PaginatedPostResponseDto;
 import com.example.springdemo.dto.requestdto.PostRequestDto;
 
@@ -7,7 +8,7 @@ public interface PostService {
 
     String savePost(PostRequestDto dto);
 
-    boolean updatePost(String id, String title);
+    boolean updatePost(String id, PostDto dto);
 
     boolean deletePost(String propertyId);
 
