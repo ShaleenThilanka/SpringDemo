@@ -86,4 +86,11 @@ public class PostServiceImpl implements PostService {
                 );
 
     }
+
+    @Override
+    public PostDto getById(String propertyId) {
+       Post post = postRepo.findPostByPropertyId(propertyId);
+        return postMapper.toPostDto(post);
+
+    }
 }

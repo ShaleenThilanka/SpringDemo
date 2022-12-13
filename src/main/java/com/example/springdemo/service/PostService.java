@@ -13,4 +13,6 @@ public interface PostService {
     boolean deletePost(String propertyId);
 
     PaginatedPostResponseDto getAllPost(int page, int size, String searchText);
+
+    PostDto getById(String propertyId);
 }

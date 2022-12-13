@@ -17,4 +17,6 @@ public interface PostRepo extends JpaRepository<Post,String> {
     @Query(value = "Select COUNT(*) from post where title like ?1%",nativeQuery = true)
     long countDataCount(String searchText);
 
+    Post findPostByPropertyId(String propertyId);
+
 }

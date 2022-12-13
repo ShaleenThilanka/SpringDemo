@@ -69,11 +69,24 @@ public class PostController {
         PaginatedPostResponseDto paginatedPostResponseDto=
                 postService.getAllPost(page,size,searchText);
 
-        LOGGER.info("property Deleted!, Id:" + paginatedPostResponseDto);
+        LOGGER.info("All post Get!, Id:" + paginatedPostResponseDto);
         return new ResponseEntity<StandardResponse>(
                 new StandardResponse(200,
                         "All post Get!",
                         paginatedPostResponseDto), HttpStatus.CREATED);
+    }
+
+    @GetMapping(path = "/get-by-id/{propertyId}", params = {"page", "size", "searchText"})
+    public ResponseEntity<StandardResponse> getById(
+            @PathVariable String propertyId
+    ) {
+       PostDto postDto=postService.getById(propertyId);
+
+        LOGGER.info("post Get!, Id:" + propertyId);
+        return new ResponseEntity<StandardResponse>(
+                new StandardResponse(200,
+                        " post Get!",
+                        postDto), HttpStatus.CREATED);
     }
 
 }
