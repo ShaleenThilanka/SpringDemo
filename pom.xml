@@ -16,7 +16,7 @@
     <description>SpringDemo</description>
     <properties>
         <java.version>1.8</java.version>
-        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
     </properties>
     <dependencies>
         <dependency>
